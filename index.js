@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
-const book = require('./server/books');
+const book = require("./server/books");
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -39,6 +39,7 @@ app.get("/add-note", async (req, res) => {
   } catch (error) {
     console.log(error);
   }
+  res.json("book added....");
 });
 
 app.get("/get-books", async (req, res) => {
@@ -48,7 +49,7 @@ app.get("/get-books", async (req, res) => {
   } else {
     res.send("Something Wrong");
   }
-  res.json('Book Added ....')
+  res.json("Book Added ....");
 });
 connectDB().then(() => {
   app.listen(PORT, () => {
