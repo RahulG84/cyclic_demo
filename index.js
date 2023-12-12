@@ -48,6 +48,7 @@ app.get("/get-books", async (req, res) => {
   } else {
     res.send("Something Wrong");
   }
+  res.json('Book Added ....')
 });
 connectDB().then(() => {
   app.listen(PORT, () => {
